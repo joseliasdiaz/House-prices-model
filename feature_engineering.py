@@ -42,7 +42,7 @@ def transform(df):
   # Apply Box-Cox transformation to each numeric column
   for col in numeric_columns:
     df[col], _ = boxcox(df[col] + 1)  # Adding 1 to handle zero values
-    
+
   # Ensure that the categorical columns exist in the dataframe
   categorical_columns = ['mssubclass', 'mszoning', 'street', 'alley', 'landcontour', 'utilities', 'lotconfig', 'neighborhood', 'condition1', 'condition2', 'bldgtype', 'housestyle', 'roofstyle', 'roofmatl', 'exterior1st', 'exterior2nd', 'masvnrtype', 'foundation', 'heating', 'centralair', 'functional', 'garagetype', 'paveddrive', 'saletype', 'salecondition']
   df[categorical_columns] = df[categorical_columns].astype('category')
